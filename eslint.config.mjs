@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Prototipos de diseño (no es código de producción)
+    "design_handoff_grow_website/**",
   ]),
 ]);
 
