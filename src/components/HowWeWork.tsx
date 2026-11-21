@@ -1,29 +1,31 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { tabs } from "@/content/home";
+import type { Dictionary } from "@/i18n/dictionaries/es";
 
-export function HowWeWork() {
+export function HowWeWork({ t }: { t: Dictionary["how"] }) {
   const [tab, setTab] = useState(0);
-  const active = tabs[tab];
+  const data = tabs[tab];
+  const text = t.tabs[tab];
 
   return (
-    <section id="como" className="container-grow section-y">
+    <section id="como" aria-labelledby="como-title" className="container-grow section-y">
       <div className="mb-12 grid grid-cols-[repeat(auto-fit,minmax(min(100%,420px),1fr))] items-end gap-x-14 gap-y-6">
         <div>
-          <p className="eyebrow mb-3.5 text-teal">Cómo trabajamos</p>
-          <h2 className="h2-display text-purple">El desarrollo no se entrega: se construye.</h2>
+          <p className="eyebrow mb-3.5 text-teal">{t.eyebrow}</p>
+          <h2 id="como-title" className="h2-display text-purple">
+            {t.title}
+          </h2>
         </div>
-        <p className="text-[19px] text-pretty text-purple-muted">
-          Cada comunidad conoce su camino mejor que nadie. Nuestro papel es escuchar, acompañar y sumar a quienes
-          pueden ayudar a recorrerlo.
-        </p>
+        <p className="text-[19px] text-pretty text-purple-muted">{t.body}</p>
       </div>
 
       <div role="tablist" className="mb-7 flex flex-wrap gap-2">
-        {tabs.map((t, i) => (
+        {t.tabs.map((item, i) => (
           <button
-            key={t.label}
+            key={item.label}
             role="tab"
             id={`tab-${i}`}
             aria-selected={i === tab}
@@ -33,7 +35,7 @@ export function HowWeWork() {
               i === tab ? "bg-purple text-white" : "bg-lilac text-purple"
             }`}
           >
-            {t.label}
+            {item.label}
           </button>
         ))}
       </div>
@@ -44,21 +46,28 @@ export function HowWeWork() {
         aria-labelledby={`tab-${tab}`}
         className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,420px),1fr))] items-stretch gap-5"
       >
-        <div className="photo-placeholder flex min-h-[380px] items-end rounded-[32px_32px_32px_8px] p-5">
-          {active.photo}
+        <div className="relative min-h-[380px] overflow-hidden rounded-[32px_32px_32px_8px] bg-lilac">
+          <Image
+            key={data.photo}
+            src={data.photo}
+            alt={text.alt}
+            fill
+            sizes="(min-width: 900px) 50vw, 100vw"
+            className="object-cover"
+          />
         </div>
         <div className="flex flex-col justify-between gap-8 rounded-panel bg-lilac p-[clamp(28px,4vw,48px)]">
           <div className="flex items-start justify-between">
             <span className="font-display text-[72px] leading-[0.8] font-extrabold tracking-[-0.04em] text-turquoise">
-              {active.n}
+              {data.n}
             </span>
             <span className="h-5 w-5 rounded-full bg-coral" />
           </div>
           <div>
             <h3 className="font-display text-[clamp(30px,3.2vw,44px)] leading-none font-extrabold tracking-[-0.03em] text-purple">
-              {active.title}
+              {text.title}
             </h3>
-            <p className="mt-4 max-w-[42ch] text-lg text-purple-muted">{active.body}</p>
+            <p className="mt-4 max-w-[42ch] text-lg text-purple-muted">{text.body}</p>
           </div>
         </div>
       </div>
