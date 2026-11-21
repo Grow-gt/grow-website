@@ -46,3 +46,6 @@ next-env.d.ts
 
 # fotos descartadas (solo local)
 /fotos-descartadas/
+
+# Material de trabajo local (no se publica): manual de marca/prototipo
+/design_handoff_grow_website/
