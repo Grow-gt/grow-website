@@ -1,4 +1,4 @@
-import { social } from "@/content/home";
+import { contactEmail, social, whatsappNumber } from "@/content/home";
 import { SITE_URL, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/es";
 
@@ -9,7 +9,6 @@ import type { Dictionary } from "@/i18n/dictionaries/es";
  */
 export function JsonLd({ lang, dict }: { lang: Locale; dict: Dictionary }) {
   const orgId = `${SITE_URL}/#organization`;
-  const sameAs = social.map((s) => s.url).filter(Boolean);
 
   const data = {
     "@context": "https://schema.org",
@@ -18,18 +17,17 @@ export function JsonLd({ lang, dict }: { lang: Locale; dict: Dictionary }) {
         "@type": "NGO",
         "@id": orgId,
         name: "GROW",
+        alternateName: "Grow Together",
         url: SITE_URL,
+        email: contactEmail,
+        contactPoint: { "@type": "ContactPoint", email: contactEmail, telephone: `+${whatsappNumber}`, contactType: "general", availableLanguage: ["es", "en"] },
         logo: `${SITE_URL}/brand/logo.png`,
         image: `${SITE_URL}/photos/hero.jpg`,
         slogan: dict.org.slogan,
         description: dict.org.description,
-        areaServed: {
-          "@type": "Place",
-          name: "La Gomera, Escuintla, Guatemala",
-          address: { "@type": "PostalAddress", addressLocality: "La Gomera", addressRegion: "Escuintla", addressCountry: "GT" },
-        },
-        knowsAbout: ["Desarrollo comunitario", "Community development", "Voluntariado", "Volunteering"],
-        ...(sameAs.length ? { sameAs } : {}),
+        areaServed: { "@type": "Country", name: "Guatemala" },
+        knowsAbout: dict.org.areas,
+        sameAs: social.map((s) => s.url),
       },
       {
         "@type": "WebSite",

@@ -31,13 +31,13 @@ export function Header({ lang, nav, cta, a11y }: Props) {
       style={{ boxShadow: scrolled ? "0 1px 0 #EADFEF" : "none" }}
     >
       <div className="container-grow flex items-center justify-between gap-4 py-4">
-        <a href="#inicio" className="flex shrink-0" aria-label={a11y.home}>
+        <a href={`/${lang}`} className="flex shrink-0" aria-label={a11y.home}>
           <Image src="/brand/logo.png" alt="GROW" width={1275} height={522} priority className="h-9 w-auto" />
         </a>
 
         <nav className="hidden items-center gap-8 text-base font-semibold min-[1000px]:flex">
           {nav.map((label, i) => (
-            <a key={label} href={navHrefs[i]} className="text-purple transition-opacity hover:opacity-70">
+            <a key={label} href={`/${lang}${navHrefs[i]}`} className="text-purple transition-opacity hover:opacity-70">
               {label}
             </a>
           ))}
@@ -46,7 +46,7 @@ export function Header({ lang, nav, cta, a11y }: Props) {
         <div className="flex items-center gap-3">
           <LanguageToggle lang={lang} label={a11y.language} />
           <a
-            href="#sumate"
+            href={`/${lang}#sumate`}
             className="hidden rounded-full bg-purple px-[22px] py-3 text-[15px] font-bold !text-white transition-colors duration-150 hover:bg-purple-bright sm:inline-flex"
           >
             {cta}
@@ -70,7 +70,7 @@ export function Header({ lang, nav, cta, a11y }: Props) {
           {nav.map((label, i) => (
             <a
               key={label}
-              href={navHrefs[i]}
+              href={`/${lang}${navHrefs[i]}`}
               onClick={() => setMenuOpen(false)}
               className="border-b border-white/15 py-3 font-display text-[26px] font-bold !text-white"
             >
@@ -78,7 +78,7 @@ export function Header({ lang, nav, cta, a11y }: Props) {
             </a>
           ))}
           <a
-            href="#sumate"
+            href={`/${lang}#sumate`}
             onClick={() => setMenuOpen(false)}
             className="mt-6 self-start rounded-full bg-turquoise px-7 py-4 font-bold !text-purple sm:hidden"
           >

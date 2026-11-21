@@ -39,7 +39,7 @@ export default async function Image({ params }: { params: Promise<{ lang: string
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: 16, fontSize: 30, color: "#01E1C8" }}>
             <div style={{ width: 18, height: 18, borderRadius: 999, background: "#FF7A5C" }} />
-            {dict.hero.eyebrow} · Guatemala
+            {dict.hero.eyebrow}
           </div>
         </div>
       </div>

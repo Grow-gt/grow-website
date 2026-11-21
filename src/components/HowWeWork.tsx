@@ -12,7 +12,7 @@ export function HowWeWork({ t }: { t: Dictionary["how"] }) {
 
   return (
     <section id="como" aria-labelledby="como-title" className="container-grow section-y">
-      <div className="mb-12 grid grid-cols-[repeat(auto-fit,minmax(min(100%,420px),1fr))] items-end gap-x-14 gap-y-6">
+      <div className="reveal mb-12 grid grid-cols-[repeat(auto-fit,minmax(min(100%,420px),1fr))] items-end gap-x-14 gap-y-6">
         <div>
           <p className="eyebrow mb-3.5 text-teal">{t.eyebrow}</p>
           <h2 id="como-title" className="h2-display text-purple">
@@ -53,7 +53,7 @@ export function HowWeWork({ t }: { t: Dictionary["how"] }) {
             alt={text.alt}
             fill
             sizes="(min-width: 900px) 50vw, 100vw"
-            className="object-cover"
+            className="fade-in object-cover"
           />
         </div>
         <div className="flex flex-col justify-between gap-8 rounded-panel bg-lilac p-[clamp(28px,4vw,48px)]">

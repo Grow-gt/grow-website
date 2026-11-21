@@ -1,17 +1,50 @@
-# GROW
+# GROW (Grow Together)
 
-> GROW es una organización de desarrollo comunitario en Guatemala. Acompaña a comunidades que impulsan su propio desarrollo y las conecta con personas voluntarias, donantes y empresas aliadas. Lema: «Crecemos cuando crecemos juntos».
+> GROW (Grow Together) es una organización guatemalteca sin fines de lucro, con valores cristianos, dedicada al desarrollo comunitario. Acompaña a comunidades de Guatemala a abrir sus propias oportunidades y las conecta con personas, empresas, iglesias y aliados que quieren sumar. Lema: «Abrimos oportunidades. Crecemos juntos.»
 
-GROW trabaja en La Gomera (Escuintla, Guatemala). Su método tiene cuatro pasos: escuchar a la comunidad, co-diseñar el plan con ella, acompañar cada etapa sin reemplazar a nadie y conectar a la comunidad con aliados.
+GROW trabaja con personas, familias y comunidades en situación de vulnerabilidad para que puedan impulsar su propio crecimiento, con acompañamiento, herramientas y oportunidades que perduren. Trabaja con distintas comunidades de Guatemala, de la mano de sus líderes, iglesias y organizaciones locales. Su camino comenzó en Escuintla, en comunidades como Chipilapa.
 
 ## Sitio
 
-- [Inicio (español)](https://growgt.org/es): quiénes somos, cómo trabajamos, formas de sumarse e historias.
-- [Home (English)](https://growgt.org/en): versión en inglés (en preparación).
+- [Inicio (español)](https://growgt.org/es): quiénes somos, cómo trabajamos, nuestra fe, transparencia y formas de sumarse.
+- [Home (English)](https://growgt.org/en): the same content in English.
+
+## Misión y visión
+
+- Misión: crear e impulsar oportunidades para personas, familias y comunidades vulnerables de Guatemala, acompañando su desarrollo integral desde lo que cada comunidad ya es, de la mano de aliados que quieren sumar.
+- Visión: comunidades guatemaltecas que crecen con sus propias fuerzas, conectadas con una red de personas e instituciones que las acompañan, y con oportunidades que pasan de una generación a la siguiente.
+- Valores: amor al prójimo, dignidad, inclusión, integridad, colaboración, compromiso y sostenibilidad.
+
+## Cómo trabaja
+
+1. Escuchar: visita, conversa con líderes y familias y entiende con ellos las necesidades, las prioridades y lo que la comunidad ya está haciendo.
+2. Acompañar: diseña el camino con la comunidad (formación, herramientas, referencias a servicios especializados y seguimiento cercano).
+3. Sumar: conecta a la comunidad con aliados, mide los avances y ajusta para que los cambios permanezcan.
+
+Áreas de trabajo: educación y desarrollo; salud y bienestar; oportunidades y emprendimiento; familia y comunidad.
+
+## Fe
+
+GROW es una organización sin fines de lucro con valores cristianos. Por amor al prójimo no excluye a nadie: trabaja con personas de todas las creencias y con quienes no profesan ninguna, y su apoyo nunca depende de la religión ni de la participación en actividades espirituales. Colabora con iglesias locales como aliadas de la comunidad, junto con profesionales, instituciones y organizaciones de todo tipo.
+
+## Transparencia
+
+Compromisos: controles administrativos, contables y financieros desde el primer día; informar a cada donante en qué se invierte su donación, siempre con evidencia (es parte de sus estatutos); evaluar cada programa antes de ampliarlo; usar cada aporte para el fin con que fue entregado. GROW cuenta con una Asamblea General y una Junta Directiva.
 
 ## Formas de sumarse
 
-- Voluntariado: donar tiempo y talento; no se necesita experiencia.
-- Donaciones: aportes que se suman a lo que la comunidad ya construye.
-- Empresas aliadas: voluntariado corporativo y alianzas con propósito.
-- Compartir: difundir el trabajo de GROW.
+- Voluntariado: compartir tiempo y talentos en jornadas y actividades.
+- Profesionales aliados: salud, psicología, educación, derecho y finanzas.
+- Empresas: para que su equipo deje huella donde más importa.
+- Iglesias y organizaciones: unir esfuerzos en las comunidades donde ya sirven.
+- Donaciones: se reciben desde Guatemala y Estados Unidos por remesa o transferencia; instrucciones por WhatsApp (+502 4804 0432).
+
+## Campañas
+
+- [Campaña navideña (es)](https://growgt.org/es/campanas/navidad) · [Christmas campaign (en)](https://growgt.org/en/campanas/navidad): bolsas de útiles escolares para niñas y niños de primaria, para que sigan yendo a la escuela, y regalos de Navidad para niñas y niños de 2 a 10 años (un juguete, un artículo educativo, una prenda de ropa, algo especial y una carta con un mensaje de bendición). Donaciones por remesa o transferencia; instrucciones por WhatsApp.
+
+## Contacto
+
+- Correo: info@growgt.org
+- WhatsApp: +502 4804 0432 (https://wa.me/50248040432)
+- Instagram y Facebook: @somos.growgt

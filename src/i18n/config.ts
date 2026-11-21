@@ -13,7 +13,7 @@ export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://growgt.org
  * indexe una versión en inglés con texto en español.
  * → Cambiar `en` a `true` cuando src/i18n/dictionaries/en.ts esté traducido.
  */
-export const translated: Record<Locale, boolean> = { es: true, en: false };
+export const translated: Record<Locale, boolean> = { es: true, en: true };
 
 export const indexableLocales = locales.filter((l) => translated[l]);
 

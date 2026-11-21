@@ -80,3 +80,46 @@
   font-size: 12px;
   color: var(--color-purple-muted);
 }
+
+/* ── Movimiento ─────────────────────────────────────────────────────────────
+   Solo CSS (sin JS) para no afectar la velocidad. Las animaciones usan
+   `transform`; los hovers de Tailwind usan la propiedad `translate`, así que
+   no se pisan. Todo se desactiva con «reducir movimiento». */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes settle {
+  from { transform: scale(0.94) rotate(-1.5deg); }
+  to { transform: none; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(-3deg); }
+}
+@keyframes fade {
+  from { opacity: 0; transform: scale(1.03); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes twinkle {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
+  50% { transform: scale(0.82) rotate(18deg); opacity: 0.75; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .rise { animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+  .hero-photo { animation: settle 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+  .float { animation: float 6s ease-in-out 1s infinite; }
+  .fade-in { animation: fade 0.5s ease-out both; }
+  .twinkle { animation: twinkle 3.2s ease-in-out infinite; }
+
+  /* Aparición al hacer scroll (Chrome, Edge, Safari 26+). Sin soporte, el
+     contenido simplemente se ve estático. */
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 70%;
+    }
+  }
+}
