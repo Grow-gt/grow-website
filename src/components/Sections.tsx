@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
+import { brand } from "./Brand";
 import { contactEmail, mailtoUrl, pageLinks, pillarColors, stats, ways, whatsappUrl } from "@/content/home";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/es";
@@ -93,7 +94,7 @@ export function Hero({ t }: { t: Dictionary["hero"] }) {
     <section id="inicio" className="container-grow pt-[clamp(40px,6vw,80px)] pb-[clamp(72px,9vw,120px)]">
       <div className="grid items-center gap-[clamp(40px,4vw,64px)] min-[1000px]:grid-cols-[1.45fr_1fr]">
         <div>
-          <p className="eyebrow rise mb-[18px] text-teal">{t.eyebrow}</p>
+          <p className="eyebrow rise mb-[18px] text-teal">{brand(t.eyebrow)}</p>
           {/* Una frase por línea: el título siempre queda en dos líneas en pantallas medianas y grandes. */}
           <h1 className="rise font-display text-[clamp(34px,5.4vw,72px)] leading-[0.98] font-extrabold tracking-[-0.045em] text-purple [animation-delay:80ms] min-[1000px]:text-[clamp(44px,4.5vw,66px)]">
             {t.title.split(/(?<=\.)\s+/).map((line) => (
@@ -149,7 +150,7 @@ export function Why({ t }: { t: Dictionary["why"] }) {
               {t.title}
             </h2>
           </div>
-          <p className="text-[19px] text-pretty text-purple-muted">{t.body}</p>
+          <p className="text-[19px] text-pretty text-purple-muted">{brand(t.body)}</p>
         </div>
         <p className="eyebrow reveal mt-16 mb-7 text-teal">{t.pillarsEyebrow}</p>
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,260px),1fr))] gap-4">
@@ -267,7 +268,7 @@ export function Impact({ t }: { t: Dictionary["impact"] }) {
   );
 }
 
-export function Ways({ t }: { t: Dictionary["ways"] }) {
+export function Ways({ t, lang }: { t: Dictionary["ways"]; lang: Locale }) {
   return (
     <section id="sumate" aria-labelledby="sumate-title" className="bg-lilac">
       <div className="container-grow section-y">
@@ -285,7 +286,7 @@ export function Ways({ t }: { t: Dictionary["ways"] }) {
             return (
               <a
                 key={i}
-                href={`mailto:${contactEmail}?subject=${encodeURIComponent(text.title)}`}
+                href={w.page ? `/${lang}${w.page}` : `mailto:${contactEmail}?subject=${encodeURIComponent(text.title)}`}
                 className={`reveal flex min-h-80 flex-col gap-5 rounded-card p-[30px] transition-transform duration-200 hover:-translate-y-1 ${
                   w.featured ? "bg-purple !text-white" : "bg-white !text-purple"
                 }`}
@@ -398,7 +399,7 @@ export function Footer({ t, lang }: { t: Dictionary["footer"]; lang: Locale }) {
           ))}
         </div>
         <div className="mt-14 flex flex-wrap justify-between gap-4 border-t border-white/[0.18] pt-6 text-[13px] text-on-purple-muted">
-          <span>{t.legal}</span>
+          <span>{brand(t.legal)}</span>
           {/* TODO: enlazar a la página del aviso de privacidad (texto en el copy) cuando exista. */}
           <a href="#" className="!text-on-purple-muted hover:!text-turquoise">
             {t.privacy}

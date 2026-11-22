@@ -117,14 +117,14 @@ export const es = {
         cta: "Quiero aportar mi experiencia",
       },
       {
-        title: "Empresas",
-        body: "Las empresas también son parte de una comunidad. Si quieres que tu equipo deje huella donde más importa, hablemos.",
+        title: "Empresas y organizaciones",
+        body: "Empresas, iglesias y organizaciones también son parte de una comunidad. Si quieren dejar huella donde más importa, unamos esfuerzos.",
         cta: "Hablemos",
       },
       {
-        title: "Iglesias y organizaciones",
-        body: "Unamos esfuerzos en las comunidades donde ya sirven.",
-        cta: "Quiero colaborar",
+        title: "Mamás que emprenden",
+        body: "Apoya el fondo rotativo para mamás solteras que quieren emprender: cada préstamo que vuelve ayuda a otra mamá.",
+        cta: "Conoce el programa",
       },
     ],
   },
@@ -160,8 +160,8 @@ export const es = {
   donate: {
     title: "Tu donación abre oportunidades.",
     body: "Recibimos donaciones desde Guatemala y Estados Unidos, por remesa o transferencia. Escríbenos por WhatsApp y te enviamos las instrucciones. Siempre te contaremos, con evidencia, en qué se invirtió tu aporte.",
-    cta: "Quiero donar por WhatsApp",
-    emailCta: "Prefiero escribir por correo",
+    cta: "Donar por WhatsApp",
+    emailCta: "Quiero info por correo",
     emailSubject: "Quiero hacer una donación a GROW",
     emailBody: "Hola GROW, quiero hacer una donación. ¿Me envían las instrucciones para remesa o transferencia?",
     whatsappText: "Hola GROW, quiero hacer una donación. ¿Me envían las instrucciones?",
@@ -191,8 +191,7 @@ export const es = {
         links: [
           { label: "Voluntariado", href: "#sumate" },
           { label: "Profesionales aliados", href: "#sumate" },
-          { label: "Empresas", href: "#sumate" },
-          { label: "Iglesias y organizaciones", href: "#sumate" },
+          { label: "Empresas y organizaciones", href: "#sumate" },
           { label: "Campañas", href: "#campanas" },
           { label: "Mamás que emprenden", href: "/mujeres" },
         ],
@@ -228,9 +227,9 @@ export const es = {
     hero: {
       eyebrow: "Programa · Mamás que emprenden",
       titleLines: ["Cuando una mamá crece,", "crece toda su familia."],
-      body: "Acompañamos a mamás solteras que quieren emprender o que enfrentan necesidades específicas. A través de un fondo rotativo reciben un préstamo para su proyecto, junto con capacitación y acompañamiento cercano. Cuando lo devuelven, ese dinero vuelve a prestarse a otra mamá.",
+      body: "En Grow Together acompañamos a mamás solteras que quieren emprender o que enfrentan necesidades específicas. A través de un fondo rotativo reciben un préstamo para su proyecto, junto con capacitación y acompañamiento cercano. Cuando lo devuelven, ese dinero vuelve a prestarse a otra mamá.",
       cta: "Apoya el fondo",
-      emailCta: "Escríbenos por correo",
+      emailCta: "Quiero info por correo",
       whatsappText: "Hola Grow Together, quiero apoyar el fondo rotativo para mamás emprendedoras. ¿Me envían la información?",
     },
     who: {
@@ -387,9 +386,9 @@ export const es = {
     closing: {
       title: "Esta Navidad, crecemos juntos.",
       body: "Cada bolsa es un paso más hacia una Guatemala con más y mejor educación.",
-      cta: "Dona por WhatsApp",
+      cta: "Donar por WhatsApp",
       whatsappText: "Hola GROW, quiero sumarme a la campaña navideña de útiles escolares.",
-      emailCta: "Escríbenos por correo",
+      emailCta: "Quiero info por correo",
     },
     email: {
       noWhatsapp: "¿No usas WhatsApp? Escríbenos a",

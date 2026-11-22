@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { contactEmail, mailtoUrl, whatsappUrl } from "@/content/home";
 import type { Dictionary } from "@/i18n/dictionaries/es";
+import { brand } from "./Brand";
 import { EmailButton, WhatsAppButton } from "./Sections";
 
 type T = Dictionary["christmas"];
@@ -80,7 +81,7 @@ export function ChristmasHero({ t, donateText, email }: { t: T["hero"]; donateTe
         <div>
           <p className="eyebrow rise mb-[18px] flex items-center gap-2 text-teal">
             <Star className="twinkle h-4 w-4" />
-            {t.eyebrow}
+            {brand(t.eyebrow)}
           </p>
           <h1 className="rise font-display text-[clamp(38px,6vw,76px)] leading-[0.98] font-extrabold tracking-[-0.045em] text-purple [animation-delay:80ms] min-[1000px]:text-[clamp(48px,5vw,72px)]">
             {t.titleLines.map((line) => (

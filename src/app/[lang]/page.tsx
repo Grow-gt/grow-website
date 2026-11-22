@@ -24,7 +24,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
         <Faith t={dict.faith} />
         <Transparency t={dict.transparency} />
         <Impact t={dict.impact} />
-        <Ways t={dict.ways} />
+        <Ways t={dict.ways} lang={lang} />
         <Campaigns t={dict.campaigns} lang={lang} />
         <WomenHome t={dict.women.home} cycle={dict.women.cycle} lang={lang} />
         <Stories t={dict.stories} />

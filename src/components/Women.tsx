@@ -1,6 +1,7 @@
 import { contactEmail, mailtoUrl, whatsappUrl } from "@/content/home";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/es";
+import { brand } from "./Brand";
 import { ArrowLink, EmailButton, WhatsAppButton } from "./Sections";
 
 type T = Dictionary["women"];
@@ -160,7 +161,7 @@ export function WomenHero({ t, cycle, email }: { t: T["hero"]; cycle: T["cycle"]
             ))}
           </h1>
           <p className="rise mt-6 max-w-[52ch] text-[clamp(18px,1.5vw,20px)] text-pretty text-purple-muted [animation-delay:160ms]">
-            {t.body}
+            {brand(t.body)}
           </p>
           <div className="rise mt-9 flex flex-wrap gap-3 [animation-delay:240ms]">
             <WhatsAppButton href={whatsappUrl(t.whatsappText)}>{t.cta}</WhatsAppButton>

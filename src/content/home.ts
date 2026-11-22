@@ -44,9 +44,10 @@ export const stats: { value: string | null; color: string }[] = [
   { value: null, color: "#FF7A5C" },
 ];
 
-// Orden: Voluntariado (destacada), Profesionales aliados, Empresas, Iglesias y
-// organizaciones. Cada tarjeta abre un correo a contactEmail con su título como asunto.
-export const ways = [
+// Orden: Voluntariado (destacada), Profesionales aliados, Empresas y organizaciones,
+// Mamás que emprenden. Sin `page`, la tarjeta abre un correo a contactEmail con su
+// título como asunto; con `page`, enlaza a /{lang}{page}.
+export const ways: { featured: boolean; page?: string; icon: { d: string; cx: number; cy: number; r: number } }[] = [
   {
     featured: true,
     icon: { d: "M24 40C14 33 7 27 7 19c0-5 4-9 9-9 4 0 6 2 8 5 2-3 4-5 8-5 5 0 9 4 9 9 0 8-7 14-17 21z", cx: 24, cy: 6, r: 3.5 },
@@ -57,11 +58,12 @@ export const ways = [
   },
   {
     featured: false,
-    icon: { d: "M10 40h28M14 40V30M24 40V22M34 40V16", cx: 34, cy: 9, r: 4.5 },
+    icon: { d: "M5 38c0-6 3-9 7-9s7 3 7 9M17 38c0-7 3-11 7-11s7 4 7 11M29 38c0-6 3-9 7-9s7 3 7 9M12 18a4 4 0 1 0 0.01 0M36 18a4 4 0 1 0 0.01 0", cx: 24, cy: 15, r: 5 },
   },
   {
     featured: false,
-    icon: { d: "M5 38c0-6 3-9 7-9s7 3 7 9M17 38c0-7 3-11 7-11s7 4 7 11M29 38c0-6 3-9 7-9s7 3 7 9M12 18a4 4 0 1 0 0.01 0M36 18a4 4 0 1 0 0.01 0", cx: 24, cy: 15, r: 5 },
+    page: "/mujeres",
+    icon: { d: "M7 20h34l-4-10H11zM10 20v19h28V20M20 39v-10h8v10", cx: 40, cy: 7, r: 4 },
   },
 ];
 

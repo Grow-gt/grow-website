@@ -120,14 +120,14 @@ export const en: Dictionary = {
         cta: "I want to share my expertise",
       },
       {
-        title: "Companies",
-        body: "Companies are part of a community too. If you want your team to make a difference where it matters most, let's talk.",
+        title: "Companies & organizations",
+        body: "Companies, churches and organizations are part of a community too. If you want to make a difference where it matters most, let's join efforts.",
         cta: "Let's talk",
       },
       {
-        title: "Churches & organizations",
-        body: "Let's join efforts in the communities where you already serve.",
-        cta: "I want to partner",
+        title: "Moms who start businesses",
+        body: "Support the revolving fund for single mothers who want to start a business: every loan that comes back helps another mom.",
+        cta: "See the program",
       },
     ],
   },
@@ -165,7 +165,7 @@ export const en: Dictionary = {
     title: "Your donation opens doors.",
     body: "We accept donations from Guatemala and the United States, by remittance or bank transfer. Message us on WhatsApp and we will send you the instructions. We will always show you, with evidence, how your gift was used.",
     cta: "Donate via WhatsApp",
-    emailCta: "I'd rather email",
+    emailCta: "Get info by email",
     emailSubject: "I'd like to donate to GROW",
     emailBody: "Hi GROW, I'd like to make a donation. Could you send me the instructions for a remittance or bank transfer?",
     whatsappText: "Hi GROW, I'd like to make a donation. Could you send me the instructions?",
@@ -195,8 +195,7 @@ export const en: Dictionary = {
         links: [
           { label: "Volunteer", href: "#sumate" },
           { label: "Professional partners", href: "#sumate" },
-          { label: "Companies", href: "#sumate" },
-          { label: "Churches & organizations", href: "#sumate" },
+          { label: "Companies & organizations", href: "#sumate" },
           { label: "Campaigns", href: "#campanas" },
           { label: "Moms who start businesses", href: "/mujeres" },
         ],
@@ -220,7 +219,7 @@ export const en: Dictionary = {
     home: {
       eyebrow: "Moms who start businesses",
       title: "A loan that comes back to help another mom.",
-      body: "We walk alongside single mothers who want to start a business or face specific needs. Through a revolving fund, every loan that is repaid is lent again to another mom: the same gift helps again and again.",
+      body: "At Grow Together we walk alongside single mothers who want to start a business or face specific needs. Through a revolving fund, every loan that is repaid is lent again to another mom: the same gift helps again and again.",
       cta: "See the program",
       donate: "Support the fund",
     },
@@ -232,9 +231,9 @@ export const en: Dictionary = {
     hero: {
       eyebrow: "Program · Moms who start businesses",
       titleLines: ["When a mom grows,", "her whole family grows."],
-      body: "We walk alongside single mothers who want to start a business or face specific needs. Through a revolving fund they receive a loan for their project, together with training and close accompaniment. When they repay it, that money is lent again to another mom.",
+      body: "At Grow Together we walk alongside single mothers who want to start a business or face specific needs. Through a revolving fund they receive a loan for their project, together with training and close accompaniment. When they repay it, that money is lent again to another mom.",
       cta: "Support the fund",
-      emailCta: "Email us",
+      emailCta: "Get info by email",
       whatsappText: "Hi Grow Together, I'd like to support the revolving fund for moms who start businesses. Could you send me the details?",
     },
     who: {
@@ -393,7 +392,7 @@ export const en: Dictionary = {
       body: "Every bag is one more step toward a Guatemala with more and better education.",
       cta: "Donate via WhatsApp",
       whatsappText: "Hi GROW, I'd like to join the Christmas school supplies campaign.",
-      emailCta: "Email us",
+      emailCta: "Get info by email",
     },
     email: {
       noWhatsapp: "Don't use WhatsApp? Email us at",
