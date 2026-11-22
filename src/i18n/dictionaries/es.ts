@@ -5,10 +5,10 @@
 
 export const es = {
   meta: {
-    title: "GROW · Abrimos oportunidades. Crecemos juntos.",
+    title: "Grow Together (GROW) · Abrimos oportunidades. Crecemos juntos.",
     description:
       "Organización sin fines de lucro que acompaña a comunidades de Guatemala a abrir oportunidades en educación, salud e ingresos.",
-    ogAlt: "GROW · Abrimos oportunidades. Crecemos juntos.",
+    ogAlt: "Grow Together (GROW) · Abrimos oportunidades. Crecemos juntos.",
   },
   org: {
     slogan: "Abrimos oportunidades. Crecemos juntos.",
@@ -17,14 +17,14 @@ export const es = {
     areas: ["Educación y desarrollo", "Salud y bienestar", "Oportunidades y emprendimiento", "Familia y comunidad"],
   },
   a11y: {
-    home: "GROW — inicio",
+    home: "Grow Together (GROW) — inicio",
     menu: "Menú",
     language: "Idioma",
   },
   nav: ["Quiénes somos", "Cómo trabajamos", "Campañas", "Historias", "Transparencia"],
   header: { cta: "Súmate" },
   hero: {
-    eyebrow: "Desarrollo comunitario · Guatemala",
+    eyebrow: "Grow Together · Desarrollo comunitario · Guatemala",
     title: "Abrimos oportunidades. Crecemos juntos.",
     body: "Acompañamos a comunidades de Guatemala a abrir sus propias oportunidades, y las conectamos con personas, empresas y aliados que quieren sumar.",
     ctaPrimary: "Súmate",
@@ -34,7 +34,7 @@ export const es = {
   why: {
     eyebrow: "Por qué existimos",
     title: "Ninguna comunidad crece sola.",
-    body: "Y nadie conoce mejor su camino que quienes lo recorren. En GROW escuchamos, acompañamos y unimos esfuerzos para que el desarrollo nazca desde dentro y llegue lejos.",
+    body: "Y nadie conoce mejor su camino que quienes lo recorren. En Grow Together (GROW) escuchamos, acompañamos y unimos esfuerzos para que el desarrollo nazca desde dentro y llegue lejos.",
     pillarsEyebrow: "Lo que impulsamos",
     pillars: [
       { title: "Oportunidades", body: "Educación, capacitación e ingresos que abren puertas reales." },
@@ -133,10 +133,26 @@ export const es = {
     title: "Historias",
     seeAll: "Ver todas",
     items: [
-      { category: "Comunidad", title: "[Título de la historia]" },
-      { category: "Voluntariado", title: "[Título de la historia]" },
-      { category: "Aliados", title: "[Título de la historia]" },
-      { category: "Encuentros", title: "[Título de la historia]" },
+      {
+        category: "Comunidad",
+        title: "Visita y víveres en Chipilapa",
+        summary: "Junto a una iglesia local y líderes comunitarios visitamos a familias de Chipilapa, Escuintla, y compartimos víveres. Ahí empezó nuestro camino: escuchando.",
+      },
+      {
+        category: "Voluntariado",
+        title: "Caminar la comunidad",
+        summary: "Con voluntarios y líderes locales recorremos la comunidad para conocer a cada familia en su casa y entender lo que ya está construyendo.",
+      },
+      {
+        category: "Aliados",
+        title: "Una iglesia local que abre puertas",
+        summary: "Trabajamos de la mano de una iglesia local, aliada de la comunidad, para llegar a más familias y dar seguimiento cercano.",
+      },
+      {
+        category: "Encuentros",
+        title: "Una mesa para conversar",
+        summary: "Compartir una comida también es escuchar: en cada encuentro conversamos con familias y líderes sobre dónde podemos sumar.",
+      },
     ],
     prev: "Historia anterior",
     next: "Historia siguiente",
@@ -178,6 +194,7 @@ export const es = {
           { label: "Empresas", href: "#sumate" },
           { label: "Iglesias y organizaciones", href: "#sumate" },
           { label: "Campañas", href: "#campanas" },
+          { label: "Mamás que emprenden", href: "/mujeres" },
         ],
       },
       {
@@ -189,6 +206,87 @@ export const es = {
         ],
       },
     ],
+  },
+  women: {
+    meta: {
+      title: "Mamás que emprenden · Fondo rotativo · Grow Together",
+      description:
+        "Grow Together acompaña a mamás solteras de Guatemala que quieren emprender o enfrentan necesidades específicas, con un fondo rotativo: cada préstamo que se devuelve vuelve a prestarse a otra mamá.",
+    },
+    home: {
+      eyebrow: "Mamás que emprenden",
+      title: "Un préstamo que vuelve para ayudar a otra mamá.",
+      body: "Acompañamos a mamás solteras que quieren emprender o que enfrentan necesidades específicas. Con un fondo rotativo, cada préstamo que se devuelve vuelve a prestarse a otra mamá: un mismo aporte ayuda una y otra vez.",
+      cta: "Conoce el programa",
+      donate: "Apoya el fondo",
+    },
+    cycle: {
+      label: "Ciclo del fondo rotativo: tú aportas, ella emprende, devuelve el préstamo y el fondo ayuda a otra mamá.",
+      center: "Ellas crecen",
+      steps: ["Tú aportas", "Ella emprende", "Devuelve", "Otra mamá empieza"],
+    },
+    hero: {
+      eyebrow: "Programa · Mamás que emprenden",
+      titleLines: ["Cuando una mamá crece,", "crece toda su familia."],
+      body: "Acompañamos a mamás solteras que quieren emprender o que enfrentan necesidades específicas. A través de un fondo rotativo reciben un préstamo para su proyecto, junto con capacitación y acompañamiento cercano. Cuando lo devuelven, ese dinero vuelve a prestarse a otra mamá.",
+      cta: "Apoya el fondo",
+      emailCta: "Escríbenos por correo",
+      whatsappText: "Hola Grow Together, quiero apoyar el fondo rotativo para mamás emprendedoras. ¿Me envían la información?",
+    },
+    who: {
+      eyebrow: "A quién acompañamos",
+      title: "Mamás con ganas de salir adelante.",
+      items: [
+        { title: "Mamás que quieren emprender", body: "Para iniciar o hacer crecer un pequeño negocio con una idea propia." },
+        { title: "Mamás con necesidades específicas", body: "Situaciones puntuales que frenan su avance, donde un apoyo a tiempo hace la diferencia." },
+        { title: "Siempre con acompañamiento", body: "Capacitación práctica y seguimiento cercano mientras su proyecto camina." },
+      ],
+    },
+    how: {
+      eyebrow: "Cómo funciona",
+      title: "Un mismo aporte, muchas mamás.",
+      body: "Tu donación entra a un fondo que no se gasta una sola vez: circula. Cada préstamo que se devuelve abre la puerta a la siguiente mamá.",
+      steps: [
+        { title: "Tú aportas", body: "Tu donación se suma al fondo rotativo." },
+        { title: "Ella emprende", body: "Conocemos su proyecto y recibe un préstamo, capacitación y acompañamiento." },
+        { title: "Devuelve", body: "Paga su préstamo en cuotas acordadas con ella, a medida que su negocio avanza." },
+        { title: "Otra mamá empieza", body: "Ese dinero vuelve a prestarse a otra mamá, y el ciclo continúa." },
+      ],
+    },
+    ways: {
+      eyebrow: "Cómo apoyar",
+      title: "Súmate al fondo.",
+      items: [
+        {
+          title: "Dona al fondo",
+          body: "Tu aporte se presta, se devuelve y vuelve a prestarse. Te enviamos las instrucciones por WhatsApp o correo.",
+          cta: "Quiero donar",
+          whatsappText: "Hola Grow Together, quiero donar al fondo rotativo para mamás emprendedoras. ¿Me envían las instrucciones?",
+        },
+        {
+          title: "Comparte tu experiencia",
+          body: "Si sabes de negocios, finanzas o ventas, puedes acompañar a una mamá como mentora o mentor.",
+          cta: "Quiero acompañar",
+          whatsappText: "Hola Grow Together, quiero acompañar como mentor(a) a una mamá emprendedora.",
+        },
+        {
+          title: "Suma a tu empresa o iglesia",
+          body: "Pueden aportar al fondo en conjunto o abrir oportunidades para sus negocios.",
+          cta: "Hablemos",
+          whatsappText: "Hola Grow Together, queremos sumarnos como organización al programa de mamás emprendedoras.",
+        },
+      ],
+    },
+    trust: {
+      eyebrow: "Transparencia y cuidado",
+      title: "Con evidencia y con respeto.",
+      body: "Te contaremos, siempre con evidencia, cómo se mueve el fondo. Y cuidamos la privacidad de cada mamá: no publicamos su historia ni su foto sin su consentimiento.",
+    },
+    email: {
+      noWhatsapp: "¿No usas WhatsApp? Escríbenos a",
+      subject: "Fondo rotativo · Mamás que emprenden",
+      body: "Hola Grow Together, quiero apoyar el fondo rotativo para mamás emprendedoras. ¿Me envían la información?",
+    },
   },
   campaigns: {
     meta: {

@@ -16,8 +16,8 @@ export function JsonLd({ lang, dict }: { lang: Locale; dict: Dictionary }) {
       {
         "@type": "NGO",
         "@id": orgId,
-        name: "GROW",
-        alternateName: "Grow Together",
+        name: "Grow Together",
+        alternateName: "GROW",
         url: SITE_URL,
         email: contactEmail,
         contactPoint: { "@type": "ContactPoint", email: contactEmail, telephone: `+${whatsappNumber}`, contactType: "general", availableLanguage: ["es", "en"] },

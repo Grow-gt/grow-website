@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { Campaigns } from "@/components/Campaigns";
 import { Header } from "@/components/Header";
 import { Stories } from "@/components/Stories";
+import { WomenHome } from "@/components/Women";
 import { HowWeWork } from "@/components/HowWeWork";
 import { Closing, Donate, Faith, Footer, Hero, Impact, Start, Transparency, Ways, Why } from "@/components/Sections";
 import { hasLocale } from "@/i18n/config";
@@ -25,6 +26,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
         <Impact t={dict.impact} />
         <Ways t={dict.ways} />
         <Campaigns t={dict.campaigns} lang={lang} />
+        <WomenHome t={dict.women.home} cycle={dict.women.cycle} lang={lang} />
         <Stories t={dict.stories} />
         <Donate t={dict.donate} lang={lang} />
         <Closing t={dict.closing} />

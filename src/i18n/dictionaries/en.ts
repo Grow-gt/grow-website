@@ -6,10 +6,10 @@ import type { Dictionary } from "./es";
 
 export const en: Dictionary = {
   meta: {
-    title: "GROW · Opening doors. Growing together.",
+    title: "Grow Together (GROW) · Opening doors. Growing together.",
     description:
       "Nonprofit walking alongside communities in Guatemala to open opportunities in education, health and income.",
-    ogAlt: "GROW · Opening doors. Growing together.",
+    ogAlt: "Grow Together (GROW) · Opening doors. Growing together.",
   },
   org: {
     slogan: "Opening doors. Growing together.",
@@ -19,14 +19,14 @@ export const en: Dictionary = {
   },
   // not in copy
   a11y: {
-    home: "GROW — home",
+    home: "Grow Together (GROW) — home",
     menu: "Menu",
     language: "Language",
   },
   nav: ["About us", "How we work", "Campaigns", "Stories", "Transparency"],
   header: { cta: "Get involved" },
   hero: {
-    eyebrow: "Community development · Guatemala",
+    eyebrow: "Grow Together · Community development · Guatemala",
     title: "Opening doors. Growing together.",
     body: "We walk alongside communities in Guatemala as they open their own opportunities, and we connect them with people, companies and partners who want to help.",
     ctaPrimary: "Get involved",
@@ -36,7 +36,7 @@ export const en: Dictionary = {
   why: {
     eyebrow: "Why we exist", // not in copy
     title: "No community grows alone.",
-    body: "And no one knows the path better than the people walking it. At GROW we listen, walk alongside and bring efforts together so that development starts from within and goes far.",
+    body: "And no one knows the path better than the people walking it. At Grow Together (GROW) we listen, walk alongside and bring efforts together so that development starts from within and goes far.",
     pillarsEyebrow: "What we champion", // not in copy
     pillars: [
       { title: "Opportunity", body: "Education, training and income that open real doors." },
@@ -137,10 +137,26 @@ export const en: Dictionary = {
     title: "Stories",
     seeAll: "See all",
     items: [
-      { category: "Community", title: "[Story title]" },
-      { category: "Volunteering", title: "[Story title]" },
-      { category: "Partners", title: "[Story title]" },
-      { category: "Gatherings", title: "[Story title]" },
+      {
+        category: "Community",
+        title: "A visit and food supplies in Chipilapa",
+        summary: "Together with a local church and community leaders, we visited families in Chipilapa, Escuintla, and shared food supplies. That's where our journey began: by listening.",
+      },
+      {
+        category: "Volunteering",
+        title: "Walking the community",
+        summary: "With volunteers and local leaders we walk the community to meet each family at home and understand what they are already building.",
+      },
+      {
+        category: "Partners",
+        title: "A local church that opens doors",
+        summary: "We work hand in hand with a local church, a community ally, to reach more families and follow up closely.",
+      },
+      {
+        category: "Gatherings",
+        title: "A table to talk",
+        summary: "Sharing a meal is also listening: at every gathering we talk with families and leaders about where we can help.",
+      },
     ],
     prev: "Previous story",
     next: "Next story",
@@ -182,6 +198,7 @@ export const en: Dictionary = {
           { label: "Companies", href: "#sumate" },
           { label: "Churches & organizations", href: "#sumate" },
           { label: "Campaigns", href: "#campanas" },
+          { label: "Moms who start businesses", href: "/mujeres" },
         ],
       },
       {
@@ -193,6 +210,87 @@ export const en: Dictionary = {
         ],
       },
     ],
+  },
+  women: {
+    meta: {
+      title: "Moms who start businesses · Revolving fund · Grow Together",
+      description:
+        "Grow Together walks alongside single mothers in Guatemala who want to start a business or face specific needs, through a revolving fund: every loan that is repaid is lent again to another mom.",
+    },
+    home: {
+      eyebrow: "Moms who start businesses",
+      title: "A loan that comes back to help another mom.",
+      body: "We walk alongside single mothers who want to start a business or face specific needs. Through a revolving fund, every loan that is repaid is lent again to another mom: the same gift helps again and again.",
+      cta: "See the program",
+      donate: "Support the fund",
+    },
+    cycle: {
+      label: "Revolving fund cycle: you give, she starts her business, she repays the loan and the fund helps another mom.",
+      center: "They thrive",
+      steps: ["You give", "She starts", "She repays", "Another mom begins"],
+    },
+    hero: {
+      eyebrow: "Program · Moms who start businesses",
+      titleLines: ["When a mom grows,", "her whole family grows."],
+      body: "We walk alongside single mothers who want to start a business or face specific needs. Through a revolving fund they receive a loan for their project, together with training and close accompaniment. When they repay it, that money is lent again to another mom.",
+      cta: "Support the fund",
+      emailCta: "Email us",
+      whatsappText: "Hi Grow Together, I'd like to support the revolving fund for moms who start businesses. Could you send me the details?",
+    },
+    who: {
+      eyebrow: "Who we walk with",
+      title: "Moms determined to move forward.",
+      items: [
+        { title: "Moms who want to start a business", body: "To start or grow a small business with their own idea." },
+        { title: "Moms with specific needs", body: "Specific situations holding them back, where timely support makes a difference." },
+        { title: "Always with accompaniment", body: "Practical training and close follow-up while their project gets going." },
+      ],
+    },
+    how: {
+      eyebrow: "How it works",
+      title: "One gift, many moms.",
+      body: "Your donation goes into a fund that isn't spent just once: it circulates. Every loan that is repaid opens the door for the next mom.",
+      steps: [
+        { title: "You give", body: "Your donation joins the revolving fund." },
+        { title: "She starts", body: "We get to know her project and she receives a loan, training and accompaniment." },
+        { title: "She repays", body: "She repays her loan in installments agreed with her, as her business moves forward." },
+        { title: "Another mom begins", body: "That money is lent again to another mom, and the cycle continues." },
+      ],
+    },
+    ways: {
+      eyebrow: "How to help",
+      title: "Join the fund.",
+      items: [
+        {
+          title: "Give to the fund",
+          body: "Your gift is lent, repaid and lent again. We'll send you the instructions on WhatsApp or by email.",
+          cta: "I want to give",
+          whatsappText: "Hi Grow Together, I'd like to give to the revolving fund for moms who start businesses. Could you send me the instructions?",
+        },
+        {
+          title: "Share your expertise",
+          body: "If you know business, finance or sales, you can mentor a mom as she grows.",
+          cta: "I want to mentor",
+          whatsappText: "Hi Grow Together, I'd like to mentor a mom who is starting a business.",
+        },
+        {
+          title: "Bring your company or church",
+          body: "You can give to the fund together or open opportunities for their businesses.",
+          cta: "Let's talk",
+          whatsappText: "Hi Grow Together, our organization would like to join the program for moms who start businesses.",
+        },
+      ],
+    },
+    trust: {
+      eyebrow: "Transparency and care",
+      title: "With evidence and with respect.",
+      body: "We will always show you, with evidence, how the fund moves. And we protect every mom's privacy: we never publish her story or photo without her consent.",
+    },
+    email: {
+      noWhatsapp: "Don't use WhatsApp? Email us at",
+      subject: "Revolving fund · Moms who start businesses",
+      body: "Hi Grow Together, I'd like to support the revolving fund for moms who start businesses. Could you send me the details?",
+    },
   },
   campaigns: {
     meta: {

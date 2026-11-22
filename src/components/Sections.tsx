@@ -374,7 +374,7 @@ export function Footer({ t, lang }: { t: Dictionary["footer"]; lang: Locale }) {
           <div className="flex flex-col gap-[18px]">
             <Image
               src="/brand/logo-white.png"
-              alt="GROW"
+              alt="Grow Together (GROW)"
               width={1275}
               height={522}
               className="h-[46px] w-auto self-start"
@@ -387,7 +387,7 @@ export function Footer({ t, lang }: { t: Dictionary["footer"]; lang: Locale }) {
               {col.links.map((l) => (
                 <a
                   key={l.label}
-                  href={l.href.startsWith("#") ? `/${lang}${l.href}` : l.href}
+                  href={l.href.startsWith("#") || /^\/(?!\/)/.test(l.href) ? `/${lang}${l.href}` : l.href}
                   rel={l.href.startsWith("http") ? "noopener" : undefined}
                   className="text-[15px] !text-white transition-colors hover:!text-turquoise"
                 >

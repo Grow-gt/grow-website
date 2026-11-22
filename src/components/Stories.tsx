@@ -9,7 +9,6 @@ import { useAutoplay } from "./useAutoplay";
 /** Tiempo que se muestra cada posición del carrusel. */
 const SLIDE_MS = 5000;
 
-const btnBase = "rounded-full font-bold transition-colors duration-150 hover:bg-purple hover:!text-white";
 const arrowBtn =
   "flex h-11 w-11 cursor-pointer items-center justify-center rounded-full text-lg text-purple shadow-[inset_0_0_0_2px_#46074F] transition-colors duration-150 hover:bg-purple hover:text-white";
 
@@ -91,9 +90,6 @@ export function Stories({ t }: { t: Dictionary["stories"] }) {
           <button type="button" onClick={next} aria-label={t.next} className={arrowBtn}>
             →
           </button>
-          <a href="#" className={`${btnBase} ml-2 px-[22px] py-3 shadow-[inset_0_0_0_2px_#46074F]`}>
-            {t.seeAll}
-          </a>
         </div>
       </div>
 
@@ -105,9 +101,8 @@ export function Stories({ t }: { t: Dictionary["stories"] }) {
         {stories.map((s, i) => {
           const text = t.items[i];
           return (
-            <a
+            <article
               key={i}
-              href={s.href}
               className="group flex w-[85%] shrink-0 snap-start flex-col gap-4 !text-ink sm:w-[calc((100%-20px)/2)] lg:w-[calc((100%-40px)/3)]"
             >
               <div className="relative aspect-[4/3] overflow-hidden rounded-card bg-lilac">
@@ -125,10 +120,11 @@ export function Stories({ t }: { t: Dictionary["stories"] }) {
               >
                 {text.category}
               </span>
-              <h3 className="font-display text-2xl leading-[1.1] font-bold tracking-[-0.015em] transition-colors group-hover:text-purple-bright">
+              <h3 className="font-display text-2xl leading-[1.1] font-bold tracking-[-0.015em] text-ink">
                 {text.title}
               </h3>
-            </a>
+              <p className="-mt-1 text-purple-muted">{text.summary}</p>
+            </article>
           );
         })}
       </div>

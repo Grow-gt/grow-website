@@ -32,7 +32,7 @@ export function Header({ lang, nav, cta, a11y }: Props) {
     >
       <div className="container-grow flex items-center justify-between gap-4 py-4">
         <a href={`/${lang}`} className="flex shrink-0" aria-label={a11y.home}>
-          <Image src="/brand/logo.png" alt="GROW" width={1275} height={522} priority className="h-9 w-auto" />
+          <Image src="/brand/logo.png" alt="Grow Together (GROW)" width={1275} height={522} priority className="h-9 w-auto" />
         </a>
 
         <nav className="hidden items-center gap-8 text-base font-semibold min-[1000px]:flex">

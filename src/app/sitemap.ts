@@ -3,7 +3,7 @@ import { indexableLocales, SITE_URL } from "@/i18n/config";
 
 // Solo idiomas traducidos (ver `translated` en src/i18n/config.ts).
 // Al añadir páginas de la fase 2, agregarlas a `paths`.
-const paths = ["", "/campanas", "/campanas/navidad"];
+const paths = ["", "/mujeres", "/campanas", "/campanas/navidad"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return paths.flatMap((path) =>
