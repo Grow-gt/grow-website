@@ -1,0 +1,54 @@
+# Publica el sitio en Vercel (cuenta de GROW) en cada push.
+#   - push a main       → producción (growgt.org)
+#   - push a otra rama  → vista previa (URL temporal en el resumen de la ejecución)
+#
+# Se usa la CLI de Vercel con un token en lugar de la integración de Git porque
+# el plan Hobby no permite importar repos de una organización de GitHub. Así el
+# repo puede seguir en Grow-gt (público o privado).
+#
+# Requiere el secreto VERCEL_TOKEN (Settings → Secrets and variables → Actions).
+name: Deploy a Vercel
+
+on:
+  push:
+    branches: ["**"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: vercel-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Publicar en Vercel
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          SITE_URL: https://growgt.org
+        run: |
+          if [ -z "$VERCEL_TOKEN" ]; then
+            echo "::warning::Falta el secreto VERCEL_TOKEN; no se publicó nada."
+            exit 0
+          fi
+          PROD=""
+          if [ "$GITHUB_REF" = "refs/heads/main" ]; then PROD="--prod"; fi
+          # Vercel compila el proyecto en sus servidores; el proyecto se llama
+          # como el repo (grow-website) y se crea solo la primera vez.
+          URL=$(npx --yes vercel@latest deploy $PROD --yes --token "$VERCEL_TOKEN" \
+            --build-env NEXT_PUBLIC_SITE_URL="$SITE_URL" \
+            --env NEXT_PUBLIC_SITE_URL="$SITE_URL")
+          echo "Publicado: $URL"
+          {
+            if [ -n "$PROD" ]; then echo "### Producción publicada"; else echo "### Vista previa lista"; fi
+            echo "$URL"
+          } >> "$GITHUB_STEP_SUMMARY"
