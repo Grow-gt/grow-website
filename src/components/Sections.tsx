@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
-import { contactEmail, pageLinks, pillarColors, stats, stories, ways, whatsappUrl } from "@/content/home";
+import { contactEmail, mailtoUrl, pageLinks, pillarColors, stats, ways, whatsappUrl } from "@/content/home";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/es";
 
@@ -41,6 +41,38 @@ export function WhatsAppIcon({ className = "h-6 w-6" }: { className?: string }) 
   );
 }
 
+/** Ícono de sobre (correo). */
+export function MailIcon({ className = "h-6 w-6" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      className={className}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+    >
+      <rect x="3" y="5" width="18" height="14" rx="2.5" />
+      <path d="M3.5 7l8.5 6 8.5-6" />
+    </svg>
+  );
+}
+
+/** Botón con borde morado y sobre: alternativa por correo al WhatsApp. */
+export function EmailButton({ href, children }: { href: string; children: ReactNode }) {
+  return (
+    <a
+      href={href}
+      className="inline-flex items-center gap-3 rounded-full px-7 py-4 font-bold !text-purple shadow-[inset_0_0_0_2px_#46074F] transition-[background-color,color,transform] duration-200 hover:-translate-y-0.5 hover:bg-purple hover:!text-white"
+    >
+      <MailIcon />
+      {children}
+    </a>
+  );
+}
+
 /** Botón morado con el logo de WhatsApp (texto blanco sobre morado). */
 export function WhatsAppButton({ href, children }: { href: string; children: ReactNode }) {
   return (
@@ -70,7 +102,9 @@ export function Hero({ t }: { t: Dictionary["hero"] }) {
               </span>
             ))}
           </h1>
-          <p className="rise mt-6 max-w-[48ch] text-[clamp(18px,1.5vw,20px)] text-pretty text-purple-muted [animation-delay:160ms]">{t.body}</p>
+          <p className="rise mt-6 max-w-[48ch] text-[clamp(18px,1.5vw,20px)] text-pretty text-purple-muted [animation-delay:160ms]">
+            {t.body}
+          </p>
           <div className="rise mt-9 flex flex-wrap gap-3 [animation-delay:240ms]">
             <a href="#sumate" className={`${btnBase} bg-turquoise px-7 py-4`}>
               {t.ctaPrimary}
@@ -177,7 +211,11 @@ export function Faith({ t }: { t: Dictionary["faith"] }) {
 
 export function Transparency({ t }: { t: Dictionary["transparency"] }) {
   return (
-    <section id="transparencia" aria-labelledby="transparencia-title" className="relative overflow-hidden bg-purple text-white">
+    <section
+      id="transparencia"
+      aria-labelledby="transparencia-title"
+      className="relative overflow-hidden bg-purple text-white"
+    >
       <Image
         src="/brand/abrazo-izq.png"
         alt=""
@@ -265,7 +303,9 @@ export function Ways({ t }: { t: Dictionary["ways"] }) {
                   <path d={w.icon.d} />
                   <circle cx={w.icon.cx} cy={w.icon.cy} r={w.icon.r} fill="#01E1C8" stroke="none" />
                 </svg>
-                <h3 className="font-display text-[28px] leading-[1.02] font-extrabold tracking-[-0.02em]">{text.title}</h3>
+                <h3 className="font-display text-[28px] leading-[1.02] font-extrabold tracking-[-0.02em]">
+                  {text.title}
+                </h3>
                 <p className="flex-1 text-base opacity-90">{text.body}</p>
                 <span className="flex items-center gap-2 font-bold">
                   {text.cta}
@@ -285,63 +325,24 @@ export function Ways({ t }: { t: Dictionary["ways"] }) {
   );
 }
 
-export function Stories({ t }: { t: Dictionary["stories"] }) {
-  return (
-    <section id="historias" aria-labelledby="historias-title" className="container-grow section-y">
-      <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
-        <div>
-          <p className="eyebrow mb-3.5 text-teal">{t.eyebrow}</p>
-          <h2 id="historias-title" className="h2-display text-purple">
-            {t.title}
-          </h2>
-        </div>
-        <a href="#" className={`${btnBase} px-[22px] py-3 shadow-[inset_0_0_0_2px_#46074F]`}>
-          {t.seeAll}
-        </a>
-      </div>
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,300px),1fr))] gap-5">
-        {stories.map((s, i) => {
-          const text = t.items[i];
-          return (
-            <a key={i} href={s.href} className="group reveal flex flex-col gap-4 !text-ink">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-card bg-lilac">
-                <Image
-                  src={s.photo}
-                  alt=""
-                  fill
-                  sizes="(min-width: 1000px) 400px, 100vw"
-                  className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                />
-              </div>
-              <span
-                className="self-start rounded-full px-3 py-[5px] text-xs font-bold tracking-[0.12em] text-purple uppercase"
-                style={{ background: s.tag }}
-              >
-                {text.category}
-              </span>
-              <h3 className="font-display text-2xl leading-[1.1] font-bold tracking-[-0.015em] transition-colors group-hover:text-purple-bright">
-                {text.title}
-              </h3>
-            </a>
-          );
-        })}
-      </div>
-    </section>
-  );
-}
-
 export function Donate({ t, lang }: { t: Dictionary["donate"]; lang: Locale }) {
   return (
     <section id="donar" aria-labelledby="donar-title" className="px-[clamp(20px,4vw,48px)] pb-[clamp(72px,10vw,128px)]">
       <div className="reveal relative mx-auto grid max-w-[1184px] grid-cols-[repeat(auto-fit,minmax(min(100%,380px),1fr))] items-center gap-8 overflow-hidden rounded-block bg-turquoise p-[clamp(32px,5vw,64px)]">
         <div>
-          <h2 id="donar-title" className="font-display text-[clamp(32px,3.8vw,52px)] leading-none font-extrabold tracking-[-0.03em] text-purple">
+          <h2
+            id="donar-title"
+            className="font-display text-[clamp(32px,3.8vw,52px)] leading-none font-extrabold tracking-[-0.03em] text-purple"
+          >
             {t.title}
           </h2>
           <p className="mt-4 text-lg text-pretty text-purple">{t.body}</p>
         </div>
         <div className="flex flex-col items-start gap-5 min-[1000px]:items-end">
-          <WhatsAppButton href={whatsappUrl(t.whatsappText)}>{t.cta}</WhatsAppButton>
+          <div className="flex flex-wrap gap-3 min-[1000px]:justify-end">
+            <WhatsAppButton href={whatsappUrl(t.whatsappText)}>{t.cta}</WhatsAppButton>
+            <EmailButton href={mailtoUrl(t.emailSubject, t.emailBody)}>{t.emailCta}</EmailButton>
+          </div>
           <ArrowLink href={`/${lang}/campanas/navidad`} className="" onTurquoise>
             {t.campaign}
           </ArrowLink>

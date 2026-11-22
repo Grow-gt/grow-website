@@ -12,6 +12,10 @@ export const contactEmail = "info@growgt.org";
 export const whatsappNumber = "50248040432";
 export const whatsappUrl = (text: string) => `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
 
+/** Alternativa al WhatsApp (p. ej. donantes en EE. UU. que no lo usan). */
+export const mailtoUrl = (subject: string, body: string) =>
+  `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
 /**
  * Páginas internas (fase 2). `null` = la página aún no existe y el enlace no
  * se muestra, para no tener enlaces muertos.
@@ -65,6 +69,7 @@ export const stories = [
   { tag: "#01E1C8", href: "#", photo: "/photos/historia-1.jpg" },
   { tag: "#FF7A5C", href: "#", photo: "/photos/historia-2.jpg" },
   { tag: "#F4EFF7", href: "#", photo: "/photos/historia-3.jpg" },
+  { tag: "#01E1C8", href: "#", photo: "/photos/historia-4.jpg" },
 ];
 
 /** Redes sociales oficiales (@somos.growgt). Se usan en el JSON-LD (`sameAs`). */

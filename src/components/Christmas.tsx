@@ -1,11 +1,23 @@
 import Image from "next/image";
-import { whatsappUrl } from "@/content/home";
+import { contactEmail, mailtoUrl, whatsappUrl } from "@/content/home";
 import type { Dictionary } from "@/i18n/dictionaries/es";
-import { WhatsAppButton } from "./Sections";
+import { EmailButton, WhatsAppButton } from "./Sections";
 
 type T = Dictionary["christmas"];
 
 const ink = "#46074F";
+
+/** Línea «¿No usas WhatsApp? Escríbenos a info@…» con enlace de correo. */
+function EmailNote({ t, className = "" }: { t: T["email"]; className?: string }) {
+  return (
+    <p className={`text-[15px] text-purple-muted ${className}`}>
+      {t.noWhatsapp}{" "}
+      <a href={mailtoUrl(t.subject, t.body)} className="font-bold !text-purple underline underline-offset-4">
+        {contactEmail}
+      </a>
+    </p>
+  );
+}
 
 /** Estrella de cinco puntas (decorativa). */
 function Star({ className, color = "#01E1C8" }: { className?: string; color?: string }) {
@@ -61,7 +73,7 @@ const giftIcons = [
 ];
 const dotColors = ["#01E1C8", "#02ABA6", "#FF7A5C", "#01E1C8", "#02ABA6"];
 
-export function ChristmasHero({ t, donateText }: { t: T["hero"]; donateText: string }) {
+export function ChristmasHero({ t, donateText, email }: { t: T["hero"]; donateText: string; email: T["email"] }) {
   return (
     <section className="container-grow pt-[clamp(40px,6vw,80px)] pb-[clamp(72px,9vw,120px)]">
       <div className="grid items-center gap-[clamp(40px,4vw,64px)] min-[1000px]:grid-cols-[1.35fr_1fr]">
@@ -92,6 +104,7 @@ export function ChristmasHero({ t, donateText }: { t: T["hero"]; donateText: str
               {t.secondary}
             </a>
           </div>
+          <EmailNote t={email} className="rise mt-5 [animation-delay:300ms]" />
         </div>
         <div className="hero-photo relative mx-auto aspect-square w-full max-w-[520px]">
           <div className="absolute inset-0 rounded-[40%_40%_8%_40%] bg-purple" />
@@ -178,7 +191,7 @@ export function ChristmasGift({ t }: { t: T["gift"] }) {
   return <ItemsSection t={t} id="regalo" icons={giftIcons} tinted />;
 }
 
-export function ChristmasWays({ t }: { t: T["ways"] }) {
+export function ChristmasWays({ t, email }: { t: T["ways"]; email: T["email"] }) {
   return (
     <section aria-labelledby="sumar-title">
       <div className="container-grow section-y">
@@ -216,6 +229,7 @@ export function ChristmasWays({ t }: { t: T["ways"] }) {
             );
           })}
         </div>
+        <EmailNote t={email} className="reveal mt-8 text-center" />
       </div>
     </section>
   );
@@ -236,14 +250,15 @@ export function ChristmasTransparency({ t }: { t: T["transparency"] }) {
   );
 }
 
-export function ChristmasClosing({ t }: { t: T["closing"] }) {
+export function ChristmasClosing({ t, email }: { t: T["closing"]; email: T["email"] }) {
   return (
     <section className="reveal container-grow section-y text-center">
       <Star className="twinkle mx-auto mb-6 h-12 w-12" />
       <h2 className="h2-display text-purple">{t.title}</h2>
       <p className="mx-auto mt-5 max-w-[44ch] text-[19px] text-pretty text-purple-muted">{t.body}</p>
-      <div className="mt-9 flex justify-center">
+      <div className="mt-9 flex flex-wrap justify-center gap-3">
         <WhatsAppButton href={whatsappUrl(t.whatsappText)}>{t.cta}</WhatsAppButton>
+        <EmailButton href={mailtoUrl(email.subject, email.body)}>{t.emailCta}</EmailButton>
       </div>
     </section>
   );

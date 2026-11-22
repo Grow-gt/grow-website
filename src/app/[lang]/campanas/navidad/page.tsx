@@ -47,13 +47,13 @@ export default async function ChristmasPage({ params }: PageProps<"/[lang]/campa
     <>
       <Header lang={lang} nav={dict.nav} cta={dict.header.cta} a11y={dict.a11y} />
       <main>
-        <ChristmasHero t={t.hero} donateText={t.ways.items[0].whatsappText} />
+        <ChristmasHero t={t.hero} donateText={t.ways.items[0].whatsappText} email={t.email} />
         <ChristmasWhy t={t.why} />
         <ChristmasBag t={t.bag} />
         <ChristmasGift t={t.gift} />
-        <ChristmasWays t={t.ways} />
+        <ChristmasWays t={t.ways} email={t.email} />
         <ChristmasTransparency t={t.transparency} />
-        <ChristmasClosing t={t.closing} />
+        <ChristmasClosing t={t.closing} email={t.email} />
       </main>
       <Footer t={dict.footer} lang={lang} />
     </>

@@ -74,6 +74,13 @@
   text-wrap: balance;
 }
 
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 @utility photo-placeholder {
   background: repeating-linear-gradient(135deg, #eadfef 0 12px, #f4eff7 12px 24px);
   font-family: ui-monospace, monospace;
@@ -104,6 +111,18 @@
 @keyframes twinkle {
   0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
   50% { transform: scale(0.82) rotate(18deg); opacity: 0.75; }
+}
+
+@keyframes autoplay-progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+/* Barra de progreso de pestañas y carrusel (ver src/components/useAutoplay.ts). */
+.autoplay-progress {
+  transform-origin: left;
+  animation-name: autoplay-progress;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
 }
 
 @keyframes fade-only {

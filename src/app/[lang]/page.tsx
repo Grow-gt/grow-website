@@ -1,8 +1,9 @@
 import { notFound } from "next/navigation";
 import { Campaigns } from "@/components/Campaigns";
 import { Header } from "@/components/Header";
+import { Stories } from "@/components/Stories";
 import { HowWeWork } from "@/components/HowWeWork";
-import { Closing, Donate, Faith, Footer, Hero, Impact, Start, Stories, Transparency, Ways, Why } from "@/components/Sections";
+import { Closing, Donate, Faith, Footer, Hero, Impact, Start, Transparency, Ways, Why } from "@/components/Sections";
 import { hasLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
 
