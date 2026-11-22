@@ -82,7 +82,7 @@
 }
 
 /* ── Movimiento ─────────────────────────────────────────────────────────────
-   Solo CSS (sin JS) para no afectar la velocidad. Las animaciones usan
+   CSS + un observador mínimo para la aparición al hacer scroll. Las animaciones usan
    `transform`; los hovers de Tailwind usan la propiedad `translate`, así que
    no se pisan. Todo se desactiva con «reducir movimiento». */
 @keyframes rise {
@@ -106,20 +106,43 @@
   50% { transform: scale(0.82) rotate(18deg); opacity: 0.75; }
 }
 
+@keyframes fade-only {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Aparición al hacer scroll (todos los navegadores; la clase .is-visible la
+   pone src/components/RevealOnScroll.tsx). Sin JS no se oculta nada. */
+html.js .reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  /* `translate` = hover de Tailwind: sin retraso, para que el hover responda al instante. */
+  transition:
+    opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) var(--reveal-delay, 0s),
+    transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) var(--reveal-delay, 0s),
+    translate 0.2s ease;
+}
+html.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+/* Tarjetas en fila: aparecen escalonadas. */
+.reveal:nth-child(2) { --reveal-delay: 0.1s; }
+.reveal:nth-child(3) { --reveal-delay: 0.2s; }
+.reveal:nth-child(4) { --reveal-delay: 0.3s; }
+.reveal:nth-child(5) { --reveal-delay: 0.4s; }
+
 @media (prefers-reduced-motion: no-preference) {
-  .rise { animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
-  .hero-photo { animation: settle 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+  .rise { animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+  .hero-photo { animation: settle 1s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
   .float { animation: float 6s ease-in-out 1s infinite; }
   .fade-in { animation: fade 0.5s ease-out both; }
   .twinkle { animation: twinkle 3.2s ease-in-out infinite; }
+}
 
-  /* Aparición al hacer scroll (Chrome, Edge, Safari 26+). Sin soporte, el
-     contenido simplemente se ve estático. */
-  @supports (animation-timeline: view()) {
-    .reveal {
-      animation: rise linear both;
-      animation-timeline: view();
-      animation-range: entry 0% entry 70%;
-    }
-  }
+/* «Reducir movimiento»: sin desplazamientos ni animaciones continuas, pero
+   los elementos siguen apareciendo con un fundido suave. */
+@media (prefers-reduced-motion: reduce) {
+  .rise, .fade-in { animation: fade-only 0.6s ease-out both; }
+  html.js .reveal { transform: none; transition: opacity 0.6s ease-out var(--reveal-delay, 0s), translate 0.2s ease; }
 }

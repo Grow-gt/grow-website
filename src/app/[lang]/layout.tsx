@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, Figtree } from "next/font/google";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/JsonLd";
+import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { hasLocale, indexableLocales, locales, ogLocale, SITE_URL, translated } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
 import "../globals.css";
@@ -61,10 +62,20 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
   const dict = await getDictionary(lang);
 
   return (
-    <html lang={lang} className={`${bricolage.variable} ${figtree.variable}`}>
+    <html
+      lang={lang}
+      className={`${bricolage.variable} ${figtree.variable}`}
+      data-scroll-behavior="smooth"
+      suppressHydrationWarning
+    >
+      <head>
+        {/* Marca que hay JS antes de pintar: solo entonces se ocultan los .reveal (ver globals.css). */}
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+      </head>
       <body>
         <JsonLd lang={lang} dict={dict} />
         {children}
+        <RevealOnScroll />
       </body>
     </html>
   );
